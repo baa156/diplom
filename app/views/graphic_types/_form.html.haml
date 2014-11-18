@@ -1,0 +1,13 @@
+= form_for @graphic_type do |f|
+  - if @graphic_type.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@graphic_type.errors.count, "error")} prohibited this graphic_type from being saved:"
+      %ul
+        - @graphic_type.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .actions
+    = f.submit 'Save'

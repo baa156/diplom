@@ -1,0 +1,23 @@
+%h1 Listing graphics
+
+%table
+  %tr
+    %th Date from
+    %th Date to
+    %th Is activ
+    %th
+    %th
+    %th
+
+  - @graphics.each do |graphic|
+    %tr
+      %td= graphic.date_from
+      %td= graphic.date_to
+      %td= graphic.is_activ
+      %td= link_to 'Show', graphic
+      %td= link_to 'Edit', edit_graphic_path(graphic)
+      %td= link_to 'Destroy', graphic, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Graphic', new_graphic_path

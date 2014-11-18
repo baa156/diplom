@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Classroom:
+  = @dates_schedule.classroom
+%p
+  %b Timestamp:
+  = @dates_schedule.timestamp
+
+= link_to 'Edit', edit_dates_schedule_path(@dates_schedule)
+\|
+= link_to 'Back', dates_schedules_path

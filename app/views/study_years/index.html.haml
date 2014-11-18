@@ -1,0 +1,21 @@
+%h1 Listing study_years
+
+%table
+  %tr
+    %th Name
+    %th Is current
+    %th
+    %th
+    %th
+
+  - @study_years.each do |study_year|
+    %tr
+      %td= study_year.name
+      %td= study_year.is_current
+      %td= link_to 'Show', study_year
+      %td= link_to 'Edit', edit_study_year_path(study_year)
+      %td= link_to 'Destroy', study_year, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Study year', new_study_year_path

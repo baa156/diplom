@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Number:
+  = @department.number
+%p
+  %b Name:
+  = @department.name
+%p
+  %b Zav kaf:
+  = @department.zav_kaf
+%p
+  %b Secretary:
+  = @department.secretary
+%p
+  %b Director:
+  = @department.director
+
+= link_to 'Edit', edit_department_path(@department)
+\|
+= link_to 'Back', departments_path

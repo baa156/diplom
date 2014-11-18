@@ -1,0 +1,19 @@
+= form_for @graphic do |f|
+  - if @graphic.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@graphic.errors.count, "error")} prohibited this graphic from being saved:"
+      %ul
+        - @graphic.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :date_from
+    = f.date_select :date_from
+  .field
+    = f.label :date_to
+    = f.date_select :date_to
+  .field
+    = f.label :is_activ
+    = f.check_box :is_activ
+  .actions
+    = f.submit 'Save'

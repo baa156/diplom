@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Day:
+  = @weeks_schedule.day
+%p
+  %b Classroom:
+  = @weeks_schedule.classroom
+%p
+  %b Week type:
+  = @weeks_schedule.week_type
+%p
+  %b Date from:
+  = @weeks_schedule.date_from
+%p
+  %b Date to:
+  = @weeks_schedule.date_to
+%p
+  %b Time p:
+  = @weeks_schedule.time_p
+
+= link_to 'Edit', edit_weeks_schedule_path(@weeks_schedule)
+\|
+= link_to 'Back', weeks_schedules_path

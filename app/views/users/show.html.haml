@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b First name:
+  = @user.first_name
+%p
+  %b Second name:
+  = @user.second_name
+%p
+  %b Last name:
+  = @user.last_name
+%p
+  %b Login:
+  = @user.login
+%p
+  %b Password:
+  = @user.password
+%p
+  %b Description:
+  = @user.description
+%p
+  %b Is operator:
+  = @user.is_operator
+%p
+  %b Is admin:
+  = @user.is_admin
+
+= link_to 'Edit', edit_user_path(@user)
+\|
+= link_to 'Back', users_path

@@ -1,0 +1,28 @@
+= form_for @weeks_schedule do |f|
+  - if @weeks_schedule.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@weeks_schedule.errors.count, "error")} prohibited this weeks_schedule from being saved:"
+      %ul
+        - @weeks_schedule.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :day
+    = f.number_field :day
+  .field
+    = f.label :classroom
+    = f.text_field :classroom
+  .field
+    = f.label :week_type
+    = f.check_box :week_type
+  .field
+    = f.label :date_from
+    = f.date_select :date_from
+  .field
+    = f.label :date_to
+    = f.date_select :date_to
+  .field
+    = f.label :time_p
+    = f.time_select :time_p
+  .actions
+    = f.submit 'Save'

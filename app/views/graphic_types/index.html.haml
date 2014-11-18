@@ -1,0 +1,19 @@
+%h1 Listing graphic_types
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @graphic_types.each do |graphic_type|
+    %tr
+      %td= graphic_type.name
+      %td= link_to 'Show', graphic_type
+      %td= link_to 'Edit', edit_graphic_type_path(graphic_type)
+      %td= link_to 'Destroy', graphic_type, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Graphic type', new_graphic_type_path

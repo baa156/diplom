@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Date from:
+  = @graphic.date_from
+%p
+  %b Date to:
+  = @graphic.date_to
+%p
+  %b Is activ:
+  = @graphic.is_activ
+
+= link_to 'Edit', edit_graphic_path(@graphic)
+\|
+= link_to 'Back', graphics_path

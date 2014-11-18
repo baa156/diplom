@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @study_year.name
+%p
+  %b Is current:
+  = @study_year.is_current
+
+= link_to 'Edit', edit_study_year_path(@study_year)
+\|
+= link_to 'Back', study_years_path

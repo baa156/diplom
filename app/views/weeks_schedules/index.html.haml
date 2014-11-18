@@ -1,0 +1,29 @@
+%h1 Listing weeks_schedules
+
+%table
+  %tr
+    %th Day
+    %th Classroom
+    %th Week type
+    %th Date from
+    %th Date to
+    %th Time p
+    %th
+    %th
+    %th
+
+  - @weeks_schedules.each do |weeks_schedule|
+    %tr
+      %td= weeks_schedule.day
+      %td= weeks_schedule.classroom
+      %td= weeks_schedule.week_type
+      %td= weeks_schedule.date_from
+      %td= weeks_schedule.date_to
+      %td= weeks_schedule.time_p
+      %td= link_to 'Show', weeks_schedule
+      %td= link_to 'Edit', edit_weeks_schedule_path(weeks_schedule)
+      %td= link_to 'Destroy', weeks_schedule, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Weeks schedule', new_weeks_schedule_path

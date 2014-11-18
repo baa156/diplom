@@ -1,0 +1,21 @@
+%h1 Listing dates_schedules
+
+%table
+  %tr
+    %th Classroom
+    %th Timestamp
+    %th
+    %th
+    %th
+
+  - @dates_schedules.each do |dates_schedule|
+    %tr
+      %td= dates_schedule.classroom
+      %td= dates_schedule.timestamp
+      %td= link_to 'Show', dates_schedule
+      %td= link_to 'Edit', edit_dates_schedule_path(dates_schedule)
+      %td= link_to 'Destroy', dates_schedule, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Dates schedule', new_dates_schedule_path

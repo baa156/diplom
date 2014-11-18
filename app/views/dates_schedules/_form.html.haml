@@ -1,0 +1,16 @@
+= form_for @dates_schedule do |f|
+  - if @dates_schedule.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@dates_schedule.errors.count, "error")} prohibited this dates_schedule from being saved:"
+      %ul
+        - @dates_schedule.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :classroom
+    = f.text_field :classroom
+  .field
+    = f.label :timestamp
+    = f.datetime_select :timestamp
+  .actions
+    = f.submit 'Save'
