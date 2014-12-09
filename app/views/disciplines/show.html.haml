@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @discipline.name
+%p
+  %b Subject:
+  = @discipline.subject
+%p
+  %b Subject short:
+  = @discipline.subject_short
+
+= link_to 'Edit', edit_discipline_path(@discipline)
+\|
+= link_to 'Back', disciplines_path

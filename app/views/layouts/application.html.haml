@@ -1,0 +1,48 @@
+!!!
+%html
+  %head
+    %title Дипломная работа
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    .container
+      %nav.navbar.navbar-default{:role => "navigation"}
+        .container-fluid
+          / Brand and toggle get grouped for better mobile display
+          .navbar-header
+            %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+              %span.sr-only Toggle navigation
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+          / Collect the nav links, forms, and other content for toggling
+          #bs-example-navbar-collapse-1.collapse.navbar-collapse
+            %ul.nav.navbar-nav
+              %li
+                =link_to "Кафедры", disciplines_path
+              %li
+                =link_to "Моё расписание", schedules_path
+              -if current_user
+                -if current_user.is_operator
+                  %li
+                    =link_to "Оператор", schedules_path
+                -if current_user.is_admin
+                  %li
+                    =link_to "Админ", schedules_path
+
+
+            %ul.nav.navbar-nav.navbar-right
+              -if current_user
+                %li
+                  =link_to current_user.first_name + ' ' + current_user.last_name + ' ' +  "Выйти", logout_path, method: :post
+              -else
+                %li
+                  =link_to "Войти", login_path
+
+          / /.navbar-collapse
+        / /.container-fluid
+      %div
+        %p#notice= flash[:notice]
+        %p#alert= flash[:alert]
+      = yield

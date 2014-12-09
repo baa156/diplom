@@ -1,3 +1,4 @@
 class GraphicType < ActiveRecord::Base
-  belongs_to :graphic
+  has_many :graphic
+  validates :name, presence: true, uniqueness: true
 end
